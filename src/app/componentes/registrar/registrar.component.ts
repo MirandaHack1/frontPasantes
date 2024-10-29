@@ -33,15 +33,15 @@ regresarLogin(){
 }
 guardar (){
   let data = {
-    nombre: this.nombre,
-    apellido: this.apellido,
-    correo: this.correo,
-    contrasena: this.contrasena
+    loNombre: this.nombre,
+    loApellido: this.apellido,
+    loCorreo: this.correo,
+    loContrasena: this.contrasena
   }
-  this.testService.postLogin(data).subscribe(
+  console.log(data);
+  this.testService.postUser(data).subscribe(
     (response: { message: any; })=>{
       this.texto = response.message;
-     
     },
     (error: any)=>{
       console.log(error)

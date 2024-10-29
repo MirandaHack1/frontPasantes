@@ -3,21 +3,21 @@
         <h2>Registro</h2>
         <label>
             Nombre:
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder ="Ingrese su Nombre" [(ngModel)]="nombre"required>
         </label>
         <label>
             Apellido:
-            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" [(ngModel)]="apellido"required>
         </label>
         <label>
             Correo:
-            <input type="text" id="correo" name="correo" placeholder="Ingrese su correo" required>
+            <input type="text" id="correo" name="correo" placeholder="Ingrese su correo" [(ngModel)]="correo"required>
         </label>
         <label>
             Contraseña:
-            <input type="text" id="contrasena" name="contrasena" placeholder="Ingrese su Contraseña" required>
+            <input type="text" id="contrasena" name="contrasena" placeholder="Ingrese su Contraseña" [(ngModel)]="contrasena"required>
         </label>
-        <button type="submit">Guardar</button>
+        <button type="submit" (click)="guardar()">Guardar</button>
         <button type="button" (click)="regresarLogin()">Iniciar Sesión</button>
     </form>
 </div>

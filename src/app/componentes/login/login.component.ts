@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TestService } from '../../services/test.service';
 import { Router, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { mergeNsAndName } from '@angular/compiler';
+import { text } from 'stream/consumers';
 
 @Component({
   selector: 'app-login',
@@ -14,70 +16,71 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   title = 'frontPasantes';
-  nombre ="";
-  edad="";
-  fecha="";
-  texto:any
-  
+  nombre = "";
+  edad = "";
+  fecha = "";
+  texto: any
+  status: any;
+
   //variables de inicio de sesion
-  correo = ""; 
+  correo = "";
   contrasena = "";
 
   constructor(
-    private _testService: TestService, private router:Router
-  ){}
+    private _testService: TestService, private router: Router
+  ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getTest();
   }
 
-  getTest(){
+  getTest() {
     this._testService.getTest().subscribe(
-      (response: { message: any; })=>{
+      (response: { message: any; }) => {
         this.texto = response.message;
-        
+
       },
-      (error: any)=>{
+      (error: any) => {
         console.log(error)
       }
     )
   }
 
-  postTest(){
+  postTest() {
     let data = {
-      "inNombre":this.nombre,
-      "inedad":this.edad,
-      "infecha":this.fecha,
+      "inNombre": this.nombre,
+      "inedad": this.edad,
+      "infecha": this.fecha,
     }
     this._testService.postTest(data).subscribe(
-      (response: { message: any; })=>{
+      (response: { message: any; }) => {
         this.texto = response.message;
       },
-      (error: any)=>{
+      (error: any) => {
         console.log(error)
       }
     )
   }
 
-  postLogin(){
+  postLogin() {
     let data = {
-      "loCorreo":this.correo,
-      "loContrasena":this.contrasena,
-      
+      "loCorreo": this.correo,
+      "loContrasena": this.contrasena,
     }
     console.log(data)
     this._testService.postLogin(data).subscribe(
-      (response: { message: any; })=>{
-        this.texto = response.message;
-       
+      (response:any) => {
+      if(response.status == 200){
+        this.router.navigate(['/registrar']);
+      }
       },
-      (error: any)=>{
+      (error: any) => {
         console.log(error)
       }
     )
   }
 
-  resgistrarUsuario(){
+  resgistrarUsuario() {
     this.router.navigate(['/registrar']);
   }
 }
