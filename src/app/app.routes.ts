@@ -1,3 +1,9 @@
 import { Routes } from '@angular/router';
+import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './componentes/login/login.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    { path: '', component: LoginComponent },
+    { path: 'registrar', component: RegistrarComponent }
+];
