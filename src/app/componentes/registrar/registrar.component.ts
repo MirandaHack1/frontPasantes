@@ -40,8 +40,12 @@ guardar (){
   }
   console.log(data);
   this.testService.postUser(data).subscribe(
-    (response: { message: any; })=>{
+    (response:any)=>{
       this.texto = response.message;
+      if(response.status == 200){
+        alert('Usuario registrado correctamente');
+
+      }
     },
     (error: any)=>{
       console.log(error)

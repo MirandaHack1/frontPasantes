@@ -71,7 +71,7 @@ export class LoginComponent {
     this._testService.postLogin(data).subscribe(
       (response:any) => {
       if(response.status == 200){
-        this.router.navigate(['/registrar']);
+        this.router.navigate(['/home']);
       }
       },
       (error: any) => {
