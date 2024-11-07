@@ -1,0 +1,63 @@
+<div class="tabla-container">
+  <h1>Gestión de Cuentas</h1>
+
+  <!-- Contenedor para los botones de Agregar y Buscar -->
+  <div class="actions-container">
+    <div class="search-container">
+      <label for="username">Búsqueda:</label>
+      <input type="text" 
+        id="username" 
+        placeholder="Ingresa tu usuario" 
+        [(ngModel)]="busqueda" 
+        required
+        (input)="listarCuentas()"
+      />
+      <button class="btn-search" (click)="listarCuentas()">
+        <i class="fas fa-search"></i> Buscar
+      </button>
+    </div>
+
+    <button class="btn-add" (click)="nuevaCuenta()"> 
+      <i class="fas fa-plus"></i> Agregar Cuenta
+    </button>
+  </div>
+
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Acciones</th> <!-- Nueva columna de Acciones -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of data">
+        <td>{{ cliente.loCode }}</td>
+        <td>{{ cliente.loNombre }}</td>
+        <td>{{ cliente.loApellido }}</td>
+        <td>{{ cliente.loCorreo }}</td>
+        <td class="actions">
+          <!-- Botón para mostrar el menú de acciones en pantallas pequeñas -->
+          <button *ngIf="isSmallScreen" class="btn-dropdown" (click)="toggleDropdown(cliente.loCode)">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+
+          <!-- Botones de acción en pantallas grandes -->
+          <div *ngIf="!isSmallScreen || dropdownOpen === cliente.loCode" class="btn-group">
+            <button class="btn-edit" (click)="editar(cliente.loCode)">
+              <i class="fas fa-edit"></i> 
+            </button>
+            <button class="btn-delete" (click)="eliminarCuenta(cliente.loCode)">
+              <i class="fas fa-trash"></i> 
+            </button>
+            <button class="btn-change-password" (click)="cambioContrasena(cliente.loCode)">
+              <i class="fas fa-key"></i> 
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

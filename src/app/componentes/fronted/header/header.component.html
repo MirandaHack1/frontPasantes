@@ -1,0 +1,26 @@
+
+  <header class="header">
+    <div class="logo">
+      <a href="#">Pasantes</a>
+    </div>
+    <!-- Botón de hamburguesa -->
+    <button class="hamburger" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="nav" [class.active]="isMenuOpen">
+      <ul>
+        <li><a>Inicio</a></li>
+        <li><a >Servicios</a></li>
+        <li><a >Sobre Nosotros</a></li>
+        <li><a (click)="cerrarSesion()" >Cerrar Sesion</a></li>
+      </ul>
+    </nav>
+  
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+      <!-- Agregar FontAwesome en el <head> de tu index.html -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </header>
+  

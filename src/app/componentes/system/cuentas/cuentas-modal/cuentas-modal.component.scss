@@ -1,0 +1,76 @@
+// Variables para colores y espaciados
+$primary-color: #265f75;
+$secondary-color: #f4f4f4;
+$padding: 1rem;
+$input-padding: 0.75rem;
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    padding: 0 1rem;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: $padding;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: $primary-color;
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        font-size: 1rem;
+        color: #333;
+        font-weight: 500;
+
+        input {
+            width: 100%;
+            padding: $input-padding;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: $primary-color;
+                outline: none;
+            }
+
+            &::placeholder {
+                color: #aaa;
+            }
+        }
+    }
+
+    button {
+        padding: $input-padding;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

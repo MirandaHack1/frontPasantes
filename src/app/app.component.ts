@@ -3,9 +3,9 @@ import { RouterOutlet,Router} from '@angular/router';
 import { TestService } from './services/test.service';
 // import {}
 import { FormsModule } from '@angular/forms';
-import { MenuComponent } from './componentes/menu/menu.component';
-import { HeaderComponent } from './componentes/header/header.component';
-import {FooterComponent } from './componentes/footer/footer.component';
+import { MenuComponent } from './componentes/fronted/menu/menu.component';
+import { HeaderComponent } from './componentes/fronted/header/header.component';
+import {FooterComponent } from './componentes/fronted/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -17,8 +17,5 @@ import {FooterComponent } from './componentes/footer/footer.component';
 })
 export class AppComponent {
   
-  
-  
-
 }
 

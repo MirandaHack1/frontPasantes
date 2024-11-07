@@ -1,0 +1,13 @@
+<div>
+    <form>
+        <h2>Contraseña</h2>
+        
+        <label >
+            Contraseña:
+            <input type="text" id="contrasena" name="contrasena" placeholder="Ingrese su Contraseña" [(ngModel)]="contrasena" required>
+        </label>
+
+        <button type="submit" (click)="cambioContrasena()">Guardar</button>
+        <button type="button" (click)="regresar()">Atrás</button> 
+    </form>
+</div>

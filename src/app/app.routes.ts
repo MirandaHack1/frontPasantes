@@ -1,13 +1,24 @@
 import { Routes } from '@angular/router';
-import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './componentes/login/login.component';
-import { HomeComponent } from './componentes/home/home.component';
-
+import { VisualComponent } from './componentes/visual/visual.component';
+import { PagesRoutes } from './componentes/pages/pages.routing';
+import { SystemRoutes } from './componentes/system/system.routing'; 
 export const routes: Routes = [
     
-    { path: '', component: LoginComponent },
-    { path: 'registrar', component: RegistrarComponent },
 
-    { path: 'home', component: HomeComponent }
+    {
+        path: '',
+          children: [{
+              path: '',
+              loadChildren: () => import('./componentes/pages/pages.routing').then(m => m.PagesRoutes),
+          }]
+    },
+    {
+        path: 'system',
+        component: VisualComponent,
+          children: [{
+              path: '',
+              loadChildren: () => import('./componentes/system/system.routing').then(m => m.SystemRoutes),
+          }]
+    },
 ];

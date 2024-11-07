@@ -1,0 +1,81 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Eliminar margen por defecto */
+    background-color: #f4f4f4; /* Color de fondo suave */
+    font-family: Arial, sans-serif; /* Fuente moderna */
+}
+
+.login {
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 90%; /* Ancho del formulario en pantallas grandes y pequeñas */
+    padding: 30px; /* Espacio interno */
+    border: 1px solid #e0e0e0; /* Borde suave */
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    background-color: #ffffff; /* Color de fondo blanco */
+}
+
+h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #265f75; /* Color verde para el título */
+    text-align: center; /* Centrar el título */
+    font-size: 24px; /* Tamaño de fuente para el título */
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column; /* Colocar etiqueta y input en columna */
+    margin-bottom: 15px; /* Espacio entre inputs */
+}
+
+label {
+    margin-bottom: 6px; /* Espacio reducido para etiquetas */
+    font-weight: normal; /* Negrita no necesaria en un diseño minimalista */
+    color: #555; /* Color de texto suave */
+    text-align: left; /* Alinear etiquetas a la izquierda */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Ancho completo para inputs */
+    height: 40px; /* Altura fija para inputs */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo para los inputs */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #265f75; /* Color de borde verde al enfocar */
+    outline: none; /* Sin contorno por defecto */
+}
+
+button {
+    width: 100%; /* Botón ocupa todo el ancho */
+    height: 40px; /* Altura fija para el botón */
+    background-color: #265f75; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s; /* Transiciones suaves */
+    margin: 10px 0; /* Margen superior e inferior de 10px */
+}
+
+button:hover {
+    background-color: #265f75; /* Color más oscuro al pasar el mouse */
+}
+
+
+@media (max-width: 600px) {
+    .login {
+        width: 90%; /* Ancho del formulario en pantallas pequeñas */
+    }
+}

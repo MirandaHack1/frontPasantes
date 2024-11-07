@@ -1,0 +1,92 @@
+/* Estilos del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #265f75;
+  color: white;
+  position: relative; /* Asegura que el menú hamburguesa se posicione relativo a este contenedor */
+  z-index: 100; /* Asegura que el header esté por encima del menú */
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Estilos para el menú de navegación */
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin-right: 2rem;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Estilos para el botón hamburguesa */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+}
+
+/* Estilos para hacer el header responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%; /* Esto coloca el menú directamente debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: #265f75;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 99; /* Asegura que el menú esté debajo del header */
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: row; /* Mostrar los elementos en una fila horizontal */
+    gap: 2rem;
+  }
+
+  .nav ul li {
+    margin: 0;
+  }
+
+  /* Mostrar el botón hamburguesa en pantallas pequeñas */
+  .hamburger {
+    display: flex;
+  }
+}
